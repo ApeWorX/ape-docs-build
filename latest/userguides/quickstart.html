@@ -88,6 +88,7 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#install">Install</a></li>
 <li><a class="reference internal" href="#quick-usage">Quick Usage</a></li>
+<li><a class="reference internal" href="#auto-toc-tree">Auto-TOC Tree</a></li>
 <li><a class="reference internal" href="#github-action">GitHub Action</a></li>
 <li><a class="reference internal" href="#github-pages">GitHub Pages</a></li>
 <li><a class="reference internal" href="#development">Development</a></li>
@@ -175,6 +176,31 @@ For example, clone this repo and install it using <code class="docutils literal 
 </div>
 <p>To run your doc-tests, use the <code class="docutils literal notranslate"><span class="pre">sphinx-ape</span> <span class="pre">test</span></code> command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span data-line="1">sphinx-ape<span class="w"> </span><span class="nb">test</span><span class="w"> </span>.
+</span></pre></div>
+</div>
+</section>
+<section id="auto-toc-tree">
+<h2>Auto-TOC Tree<a class="headerlink" href="#auto-toc-tree" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sphinx-ape</span> <span class="pre">init</span></code> command creates an <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file.
+This file represents the table of contents for the docs site.
+Any files not included in the TOC are not included in the documentation.
+<code class="docutils literal notranslate"><span class="pre">sphinx-ape</span></code> generates a simple default file with the contents:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">..</span> <span class="ow">dynamic-toc-tree</span><span class="p">::</span>
+</span></pre></div>
+</div>
+<p>To customize the files included in the TOC, specify each respective guide-set name (e.g. <code class="docutils literal notranslate"><span class="pre">userguides</span></code>).
+Also use this feature to control the ordering of the guides; otherwise the default is to include all guides in the directory in alphabetized order.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">..</span> <span class="ow">dynamic-toc-tree</span><span class="p">::</span>
+</span><span data-line="2">    <span class="nc">:userguides:</span> guide0, guide1, final
+</span></pre></div>
+</div>
+<p>You can also specify the guides in a list pattern:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">..</span> <span class="ow">dynamic-toc-tree</span><span class="p">::</span>
+</span><span data-line="2">    <span class="nc">:userguides:</span>
+</span><span data-line="3">      <span class="m">-</span> quickstart 
+</span><span data-line="4">      <span class="m">-</span> guide0
+</span><span data-line="5">      <span class="m">-</span> guide1
+</span><span data-line="6">      <span class="m">-</span> final
 </span></pre></div>
 </div>
 </section>
